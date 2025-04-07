@@ -100,8 +100,8 @@ h1 {
 
 .header-text h2 {
   font-size: 1rem;
-  font-weight: 300;
-  color: rgba(255, 196, 0, 1);
+  font-weight: 400;
+  color: #966200;
   letter-spacing: 10px;
 }
 
@@ -121,6 +121,7 @@ h1 {
   font-size: 4rem;
   font-weight: 700;
   letter-spacing: 1px;
+  color: #ffa602;
 }
 
 .services-description p {
@@ -136,17 +137,15 @@ h1 {
   box-shadow: 0px 0px 10px -5px rgb(0, 0, 0);
 }
 
-/* Kolekcja usług */
 .services-collection {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
   justify-content: center;
-  margin-bottom: 10rem;
+  margin-bottom: 7rem;
   margin-inline: 2rem;
 }
 
-/* Pojedynczy element usługi */
 .service-item {
   position: relative;
   flex: 1 1 300px;
@@ -195,7 +194,7 @@ h1 {
   transform: translate(-50%, -20%);
 }
 
-/* --- SERVICE OVERLAY --- */
+/* ---------------------------------- SERVICE OVERLAY ------------------------ */
 
 .service-item .overlay-content {
   width: 100%;
@@ -282,9 +281,11 @@ h1 {
   backdrop-filter: blur(10px);
 }
 
+.about-contact h2,
 .about-description h2 {
   font-size: 3.5rem;
   margin-bottom: 2rem;
+  color: #ffa602;
 }
 
 .about-description p {
@@ -294,11 +295,7 @@ h1 {
   font-style: italic;
   letter-spacing: 2px;
   line-height: 1.5;
-}
-
-.about-contact h2 {
-  font-size: 3.5rem;
-  margin-bottom: 2rem;
+  color: #a1a1a1;
 }
 
 .contact-details p {
@@ -357,7 +354,7 @@ a {
   margin-top: 2rem;
 }
 
-/* ============================ FOOTER ======================== */
+/* ====================================== FOOTER ======================== */
 footer {
   padding: 2rem;
   text-align: center;
@@ -366,7 +363,7 @@ footer {
   font-size: 0.9rem;
 }
 
-/* ============================= FORM ================================= */
+/* ==================================== FORM ================================= */
 form {
   max-width: 600px;
   margin: 2rem auto;
@@ -399,7 +396,7 @@ button:hover {
   background: #333;
 }
 
-/* ======================= MEDIA QUERIES ======================= */
+/* ================================== MEDIA QUERIES ======================= */
 @media (max-width: 896px) {
   .navbar nav {
     display: none;
@@ -433,7 +430,7 @@ button:hover {
     text-align: start;
   }
   .header-text h2 {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     letter-spacing: 5px;
   }
 
@@ -478,6 +475,7 @@ button:hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 0;
   }
 
   .about-description,
@@ -486,13 +484,10 @@ button:hover {
     padding: 1.5rem;
   }
 
-  .about-contact {
-    width: 600px;
-  }
-
   .about-description h2,
   .about-contact h2 {
     font-size: 2.5rem;
+    text-align: center;
   }
 
   .contact-details p {
@@ -500,10 +495,44 @@ button:hover {
     text-align: start;
   }
   .about-description p {
-    text-align: center;
+    font-size: 1rem;
+    text-align: start;
   }
 
   .map-container {
     margin-top: 3rem;
+  }
+
+  /* ============================== BACKGROUND-IMAGE ONLY ON ABOUT ===================================== */
+  .about-overlay {
+    display: none;
+  }
+  .about-description {
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+  }
+  .about-description::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 2)),
+      url("https://wynndetailing.com.au/wp-content/uploads/2024/07/Car-Detailing-A-Comprehensive-Guide-to-Pristine-Perfection.jpg");
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.1);
+    filter: blur(5px);
+  }
+
+  .about-section {
+    padding: 0;
+  }
+  .about-contact {
+    width: 100%;
+    background-color: #000;
   }
 }
