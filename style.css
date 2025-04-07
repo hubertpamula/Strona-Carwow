@@ -146,7 +146,7 @@ h1 {
   margin-inline: 2rem;
 }
 
-/* Pojedynczy element usługi – teraz z obrazkiem */
+/* Pojedynczy element usługi */
 .service-item {
   position: relative;
   flex: 1 1 300px;
@@ -155,6 +155,10 @@ h1 {
   overflow: hidden;
   box-shadow: 0px 0px 15px -5px rgb(0, 0, 0);
   border: solid 1px;
+  transition: all 0.5s ease;
+}
+.service-item:hover {
+  transform: translateY(-2%);
 }
 
 .service-item img {
@@ -165,13 +169,13 @@ h1 {
   transition: all 1s ease;
   filter: brightness(0.3);
 }
-/* Efekty przy najechaniu kursorem */
+
 .service-item:hover img {
   filter: brightness(0.4) blur(5px);
-  cursor: pointer;
   transform: scale(2);
 }
 .service-item h3 {
+  text-transform: uppercase;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -179,14 +183,53 @@ h1 {
   margin: 0;
   transition: all 0.8s ease;
   font-size: 2.5rem;
+  text-align: center;
   color: #ffa602;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  /* text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); */
 }
 
 .service-item:hover h3 {
+  font-size: 3rem;
   left: 50%;
   top: 20%;
   transform: translate(-50%, -20%);
+}
+
+/* --- SERVICE OVERLAY --- */
+
+.service-item .overlay-content {
+  width: 100%;
+  height: 70%;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-items: center;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  transition: all 0.8s ease;
+  top: 100%;
+  left: 0%;
+}
+.service-item .overlay-content p {
+  text-align: start;
+  font-weight: 300;
+  width: 70%;
+  font-size: 0.9rem;
+  margin-block: 0.5rem 3rem;
+  letter-spacing: 2px;
+  line-height: 1rem;
+}
+.service-item .overlay-content span {
+  font-size: 1.5rem;
+  text-align: start;
+  width: 70%;
+  font-weight: 700;
+}
+.service-item:hover .overlay-content {
+  /* left: 0; */
+  transform: translateY(-100%);
 }
 
 /* ================================ ABOUT SECTION =========================== */
@@ -382,9 +425,15 @@ button:hover {
   h1 {
     font-size: 2.5rem;
   }
-
+  .header-text {
+    justify-content: space-between;
+    padding-block: 2rem;
+  }
+  .header-text h1 {
+    text-align: start;
+  }
   .header-text h2 {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     letter-spacing: 5px;
   }
 
@@ -400,6 +449,25 @@ button:hover {
 
   .service-item {
     min-width: 100%;
+    height: 70vh;
+  }
+  .service-item .overlay-content {
+    height: 100%;
+  }
+  .service-item .overlay-content p {
+    font-size: 0.9rem;
+    margin-block: 1rem 3rem;
+    line-height: 1.2rem;
+    text-align: center;
+  }
+  .service-item .overlay-content span {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-align: center;
+  }
+  .service-item:hover h3 {
+    top: 10%;
+    transform: translate(-50%, -10%);
   }
 
   .services-collection {
@@ -427,26 +495,15 @@ button:hover {
     font-size: 2.5rem;
   }
 
-  .about-description p,
   .contact-details p {
     font-size: 0.9rem;
     text-align: start;
   }
+  .about-description p {
+    text-align: center;
+  }
 
   .map-container {
     margin-top: 3rem;
-  }
-}
-
-@media (max-width: 600px) {
-  .service-item {
-    min-width: 100%;
-    height: 40vh;
-  }
-  .service-item h3 {
-    font-size: 2rem;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
   }
 }
