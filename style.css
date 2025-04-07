@@ -18,23 +18,30 @@ body {
 
 /* ================================ NAVBAR ========================== */
 .navbar {
+  display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: space-between;
   justify-content: space-between;
+  -webkit-align-items: center;
   align-items: center;
   padding: 1rem 2rem;
   background-color: rgba(255, 255, 255, 0.8);
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   position: fixed;
   width: 100%;
   height: 5rem;
   top: 0;
   z-index: 1000;
+  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .logo {
   position: absolute;
   left: 50%;
+  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
   font-weight: 700;
   font-size: 2rem;
@@ -42,6 +49,7 @@ body {
 }
 
 .navbar nav {
+  display: -webkit-flex;
   display: flex;
   gap: 2rem;
 }
@@ -54,6 +62,7 @@ body {
 
 .menu-toggle {
   display: none;
+  -webkit-flex-direction: column;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
@@ -68,7 +77,9 @@ body {
 
 /* ================================ HEADER =========================== */
 .main-header {
+  display: -webkit-flex;
   display: flex;
+  -webkit-align-items: center;
   align-items: center;
   text-align: center;
   height: 70vh;
@@ -79,13 +90,19 @@ body {
   background-size: cover;
   background-position: center;
   color: #fff;
+  -webkit-box-shadow: 0px 0px 10px 2px rgb(0, 0, 0);
+  -moz-box-shadow: 0px 0px 10px 2px rgb(0, 0, 0);
   box-shadow: 0px 0px 10px 2px rgb(0, 0, 0);
 }
 
 .header-text {
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-justify-content: center;
   justify-content: center;
+  -webkit-align-items: center;
   align-items: center;
   height: 100%;
   width: 100%;
@@ -108,9 +125,13 @@ h1 {
 /* ================================ SERVICES SECTION ========================== */
 
 .services-description {
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: row;
   flex-direction: row;
+  -webkit-justify-content: space-evenly;
   justify-content: space-evenly;
+  -webkit-align-items: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 5rem 2rem;
@@ -134,10 +155,13 @@ h1 {
   color: #000;
   letter-spacing: 1px;
   border: 1px solid;
+  -webkit-box-shadow: 0px 0px 10px -5px rgb(0, 0, 0);
+  -moz-box-shadow: 0px 0px 10px -5px rgb(0, 0, 0);
   box-shadow: 0px 0px 10px -5px rgb(0, 0, 0);
 }
 
 .services-collection {
+  display: -webkit-flex;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -152,11 +176,13 @@ h1 {
   height: 50vh;
   min-width: 400px;
   overflow: hidden;
+  -webkit-box-shadow: 0px 0px 15px -5px rgb(0, 0, 0);
+  -moz-box-shadow: 0px 0px 15px -5px rgb(0, 0, 0);
   box-shadow: 0px 0px 15px -5px rgb(0, 0, 0);
-  border: solid 1px;
   transition: all 0.5s ease;
 }
 .service-item:hover {
+  -webkit-transform: translateY(-2%);
   transform: translateY(-2%);
 }
 
@@ -166,11 +192,14 @@ h1 {
   object-fit: cover;
   display: block;
   transition: all 1s ease;
+  -webkit-filter: brightness(0.3);
   filter: brightness(0.3);
 }
 
 .service-item:hover img {
+  -webkit-filter: brightness(0.4) blur(5px);
   filter: brightness(0.4) blur(5px);
+  -webkit-transform: scale(2);
   transform: scale(2);
 }
 .service-item h3 {
@@ -178,6 +207,7 @@ h1 {
   position: absolute;
   left: 50%;
   top: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   margin: 0;
   transition: all 0.8s ease;
@@ -191,18 +221,20 @@ h1 {
   font-size: 3rem;
   left: 50%;
   top: 20%;
+  -webkit-transform: translate(-50%, -20%);
   transform: translate(-50%, -20%);
 }
 
 /* ---------------------------------- SERVICE OVERLAY ------------------------ */
 
-.service-item .overlay-content {
+.overlay-content {
   width: 100%;
-  height: 70%;
   color: #ffffff;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
-  justify-content: end;
+  -webkit-align-items: center;
   align-items: center;
   overflow: hidden;
   position: absolute;
@@ -210,24 +242,23 @@ h1 {
   transition: all 0.8s ease;
   top: 100%;
   left: 0%;
+  padding-bottom: 2rem;
 }
-.service-item .overlay-content p {
+.overlay-content p {
+  width: 90%;
   text-align: start;
   font-weight: 300;
-  width: 70%;
   font-size: 0.9rem;
-  margin-block: 0.5rem 3rem;
   letter-spacing: 2px;
   line-height: 1rem;
+  padding-top: 1rem;
 }
-.service-item .overlay-content span {
+.overlay-content span {
   font-size: 1.5rem;
-  text-align: start;
-  width: 70%;
   font-weight: 700;
 }
 .service-item:hover .overlay-content {
-  /* left: 0; */
+  -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
 }
 
@@ -249,17 +280,23 @@ h1 {
     url("https://wynndetailing.com.au/wp-content/uploads/2024/07/Car-Detailing-A-Comprehensive-Guide-to-Pristine-Perfection.jpg");
   background-size: cover;
   background-position: center;
+  -webkit-filter: blur(5px);
   filter: blur(5px);
+  -webkit-transform: scale(1.05);
   transform: scale(1.05);
   z-index: -1;
   height: 100%;
 }
 
 .about-content {
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: row;
   flex-direction: row;
   gap: 2rem;
+  -webkit-align-items: center;
   align-items: center;
+  -webkit-justify-content: space-evenly;
   justify-content: space-evenly;
 }
 
@@ -276,8 +313,11 @@ h1 {
   height: fit-content;
   padding: 2rem;
   background-color: hsla(0, 0%, 0%, 0.6);
+  -webkit-box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
+  -moz-box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
   box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
   border: solid 1px black;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
 }
 
@@ -330,11 +370,13 @@ a {
 }
 
 .button-map {
-  padding: 1rem;
+  padding: 0.8rem;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-style: normal;
   color: black;
+  -webkit-box-shadow: 0px 0px 20px 2px rgb(0, 0, 0);
+  -moz-box-shadow: 0px 0px 20px 2px rgb(0, 0, 0);
   box-shadow: 0px 0px 20px 2px rgb(0, 0, 0);
   background-color: #ffa602;
   position: absolute;
@@ -346,6 +388,7 @@ a {
 .button-map:hover {
   cursor: pointer;
   background-color: #966200;
+  -webkit-transform: scale(1.02) translateY(-10px);
   transform: scale(1.02) translateY(-10px);
 }
 
@@ -367,7 +410,9 @@ footer {
 form {
   max-width: 600px;
   margin: 2rem auto;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
   gap: 1rem;
   padding: 0 1rem;
@@ -400,22 +445,28 @@ button:hover {
 @media (max-width: 896px) {
   .navbar nav {
     display: none;
+    -webkit-flex-direction: column;
     flex-direction: column;
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     background-color: rgba(255, 255, 255, 0.8);
     padding: 1rem 2rem;
+    -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    -moz-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
   }
 
   .navbar nav.active {
+    display: -webkit-flex;
     display: flex;
   }
 
   .menu-toggle {
+    display: -webkit-flex;
     display: flex;
   }
 
@@ -423,6 +474,7 @@ button:hover {
     font-size: 2.5rem;
   }
   .header-text {
+    -webkit-justify-content: space-between;
     justify-content: space-between;
     padding-block: 2rem;
   }
@@ -443,36 +495,35 @@ button:hover {
     font-size: 0.9rem;
     text-align: center;
   }
-
+  /* ---------------------- OVERLAY CONTENT ------------------------ */
   .service-item {
     min-width: 100%;
     height: 70vh;
   }
-  .service-item .overlay-content {
-    height: 100%;
-  }
-  .service-item .overlay-content p {
+  .overlay-content p {
     font-size: 0.9rem;
-    margin-block: 1rem 3rem;
     line-height: 1.2rem;
     text-align: center;
   }
-  .service-item .overlay-content span {
+  .overlay-content span {
     font-size: 1.5rem;
     letter-spacing: 2px;
     text-align: center;
   }
   .service-item:hover h3 {
     top: 10%;
+    -webkit-transform: translate(-50%, -10%);
     transform: translate(-50%, -10%);
   }
-
+  /* --------------------------------------------------------------------- */
   .services-collection {
     gap: 3rem;
   }
 
   .about-content {
+    -webkit-flex-direction: column;
     flex-direction: column;
+    -webkit-align-items: center;
     align-items: center;
     text-align: center;
     gap: 0;
@@ -524,7 +575,9 @@ button:hover {
       url("https://wynndetailing.com.au/wp-content/uploads/2024/07/Car-Detailing-A-Comprehensive-Guide-to-Pristine-Perfection.jpg");
     background-size: cover;
     background-position: center;
+    -webkit-transform: scale(1.1);
     transform: scale(1.1);
+    -webkit-filter: blur(5px);
     filter: blur(5px);
   }
 
