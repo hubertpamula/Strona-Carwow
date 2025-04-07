@@ -106,6 +106,7 @@ h1 {
 }
 
 /* ================================ SERVICES SECTION ========================== */
+
 .services-description {
   display: flex;
   flex-direction: row;
@@ -131,10 +132,11 @@ h1 {
   text-align: start;
   color: #000;
   letter-spacing: 1px;
-  border: solid 1px;
+  border: 1px solid;
   box-shadow: 0px 0px 10px -5px rgb(0, 0, 0);
 }
 
+/* Kolekcja usług */
 .services-collection {
   display: flex;
   flex-wrap: wrap;
@@ -144,50 +146,47 @@ h1 {
   margin-inline: 2rem;
 }
 
-.services-collection > div {
+/* Pojedynczy element usługi – teraz z obrazkiem */
+.service-item {
+  position: relative;
   flex: 1 1 300px;
   height: 50vh;
   min-width: 400px;
-  transition: all 0.2s ease-in-out;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-align: center;
-}
-
-.services-collection > div:hover {
-  filter: brightness(1.7);
-  cursor: pointer;
+  overflow: hidden;
   box-shadow: 0px 0px 15px -5px rgb(0, 0, 0);
-  transform: scale(1.01);
+  border: solid 1px;
 }
 
-.services-collection > div h3 {
+.service-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: all 1s ease;
+  filter: brightness(0.3);
+}
+/* Efekty przy najechaniu kursorem */
+.service-item:hover img {
+  filter: brightness(0.4) blur(5px);
+  cursor: pointer;
+  transform: scale(2);
+}
+.service-item h3 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  transition: all 0.8s ease;
   font-size: 2.5rem;
   color: #ffa602;
-  transition: transform 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
-.services-collection > div:hover h3 {
-  transform: translateY(-10px);
-}
-
-.service-exterior {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(https://intercars.pl/blog/wp-content/uploads/2022/10/Auto-detailing-1.webp);
-}
-
-.service-interior {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(https://powoskowani.pl/userdata/public/news/images/11.jpg);
-}
-
-.service-wax {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(https://storage.waw.cloud.ovh.net/v1/AUTH_84b67594a2e74dd2900d766192be8ea4/articleImages/2022_3_17_10_39_47_auto-detailing.jpg);
+.service-item:hover h3 {
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -20%);
 }
 
 /* ================================ ABOUT SECTION =========================== */
@@ -208,8 +207,7 @@ h1 {
     url("https://wynndetailing.com.au/wp-content/uploads/2024/07/Car-Detailing-A-Comprehensive-Guide-to-Pristine-Perfection.jpg");
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
-  filter: blur(2px);
+  filter: blur(5px);
   transform: scale(1.05);
   z-index: -1;
   height: 100%;
@@ -228,8 +226,6 @@ h1 {
   max-width: 40%;
   height: fit-content;
   padding: 2rem;
-  /* background-color: hsla(0, 0%, 0%, 0.6);
-  box-shadow: 0px 0px 20px -10px rgb(0, 0, 0); */
 }
 
 .about-contact {
@@ -239,12 +235,15 @@ h1 {
   padding: 2rem;
   background-color: hsla(0, 0%, 0%, 0.6);
   box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
-  backdrop-filter: blur(5px);
+  border: solid 1px black;
+  backdrop-filter: blur(10px);
 }
+
 .about-description h2 {
   font-size: 3.5rem;
   margin-bottom: 2rem;
 }
+
 .about-description p {
   margin-block: 1rem;
   font-size: 1rem;
@@ -265,9 +264,11 @@ h1 {
   color: #a1a1a1;
   letter-spacing: 2px;
 }
+
 .contact-details p:first-child {
   margin-bottom: 1.5rem;
 }
+
 .contact-details p:last-child {
   margin-top: 1.5rem;
 }
@@ -276,15 +277,18 @@ strong {
   color: white;
   letter-spacing: 2px;
 }
+
 span {
   color: #a1a1a1;
 }
+
 a {
   color: #ffa602;
   letter-spacing: 1px;
   font-style: italic;
   text-decoration: none;
 }
+
 .button-map {
   padding: 1rem;
   font-weight: 700;
@@ -298,12 +302,13 @@ a {
   right: -1rem;
   transition: all 0.2s ease-in-out;
 }
+
 .button-map:hover {
   cursor: pointer;
   background-color: #966200;
-  transform: scale(1.2);
-  transform: translateY(-10px);
+  transform: scale(1.02) translateY(-10px);
 }
+
 .map-container {
   position: relative;
   margin-top: 2rem;
@@ -351,7 +356,7 @@ button:hover {
   background: #333;
 }
 
-/* ================768=========== MEDIA ============================ */
+/* ======================= MEDIA QUERIES ======================= */
 @media (max-width: 896px) {
   .navbar nav {
     display: none;
@@ -393,7 +398,7 @@ button:hover {
     text-align: center;
   }
 
-  .services-collection > div {
+  .service-item {
     min-width: 100%;
   }
 
@@ -401,7 +406,6 @@ button:hover {
     gap: 3rem;
   }
 
-  /* About section: column layout on mobile */
   .about-content {
     flex-direction: column;
     align-items: center;
@@ -413,6 +417,7 @@ button:hover {
     max-width: 100%;
     padding: 1.5rem;
   }
+
   .about-contact {
     width: 600px;
   }
@@ -430,5 +435,18 @@ button:hover {
 
   .map-container {
     margin-top: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .service-item {
+    min-width: 100%;
+    height: 40vh;
+  }
+  .service-item h3 {
+    font-size: 2rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 }
