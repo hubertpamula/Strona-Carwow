@@ -86,7 +86,7 @@
           Oferujemy szeroki zakres usług detailingowych – od mycia premium,
           korekty lakieru, aż po aplikację powłok ochronnych. Zadbamy o każdy
           szczegół Twojego samochodu.<br />
-          <!-- <span>Kliknij w usługe po więcej szczegółów.</span> -->
+          <span>Kliknij w usługe po więcej szczegółów.</span>
         </p>
       </div>
 
@@ -297,12 +297,25 @@
 
     <!-------------------------------------------------- FOOTER -------------------->
     <footer>&copy; 2025 CARWOW. Wszelkie prawa zastrzeżone.</footer>
-
+    <!--------------------------------------- SCRIPTS--------------------------------- -->
     <script>
       function toggleMenu() {
         const nav = document.getElementById("nav-links");
         nav.classList.toggle("active");
       }
+    </script>
+
+    <script>
+      // Pobieramy wszystkie elementy service-item
+      const serviceItems = document.querySelectorAll(".service-item");
+
+      // Dodajemy event listener dla każdego elementu
+      serviceItems.forEach((item) => {
+        item.addEventListener("click", function () {
+          // Jeśli chcemy, żeby kliknięcie w dowolny element powodowało przełączenie efektów tylko dla tego elementu:
+          this.classList.toggle("active");
+        });
+      });
     </script>
   </body>
 </html>

@@ -182,6 +182,7 @@ h1 {
   box-shadow: 0px 0px 15px -5px rgb(0, 0, 0);
   border: solid 1px;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 
 .service-item img {
@@ -194,7 +195,7 @@ h1 {
   filter: brightness(0.3);
 }
 
-.service-item:hover img {
+.service-item.active img {
   -webkit-filter: brightness(0.4) blur(5px);
   filter: brightness(0.4) blur(5px);
   -webkit-transform: scale(1.2);
@@ -217,10 +218,12 @@ h1 {
 }
 
 .service-item:hover h3 {
-  left: 50%;
-  top: 20%;
-  -webkit-transform: translate(-50%, -20%);
-  transform: translate(-50%, -20%);
+  -webkit-transform: translate(-50%, -80%);
+  transform: translate(-50%, -80%);
+}
+.service-item.active h3 {
+  -webkit-transform: translate(-50%, -180%);
+  transform: translate(-50%, -180%);
 }
 
 /* ---------------------------------- SERVICE OVERLAY ------------------------ */
@@ -256,7 +259,7 @@ h1 {
   font-size: 1.5rem;
   font-weight: 700;
 }
-.service-item:hover .overlay-content {
+.service-item.active .overlay-content {
   -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
 }
@@ -441,7 +444,9 @@ button:hover {
 }
 
 /* ================================== MEDIA QUERIES ======================= */
+
 @media (max-width: 896px) {
+  /* ----------------------------- NAVBAR---------------------------------- */
   .navbar nav {
     display: none;
     -webkit-flex-direction: column;
@@ -471,6 +476,7 @@ button:hover {
   .navbar .logo img {
     height: 80px;
   }
+  /* ---------------------------------- HEADER --------------------------- */
   h1 {
     font-size: 2rem;
   }
@@ -481,7 +487,7 @@ button:hover {
     font-size: 0.8rem;
     letter-spacing: 5px;
   }
-
+  /* --------------------------------- SERVICES ---------------------------- */
   .services-description h2 {
     font-size: 3rem;
     text-align: center;
@@ -508,10 +514,7 @@ button:hover {
     letter-spacing: 2px;
     text-align: center;
   }
-  .service-item:hover h3 {
-    top: 25%;
-  }
-  /* --------------------------------------------------------------------- */
+  /* ------------------------------------ ABOUT --------------------------------- */
 
   .about-content {
     -webkit-flex-direction: column;
@@ -580,5 +583,14 @@ button:hover {
   .about-contact {
     width: 100%;
     background-color: #000;
+  }
+}
+@media (hover: none), (pointer: coarse) {
+  .service-item:hover h3 {
+    transform: translate(-50%, -50%);
+  }
+  .service-item.active h3 {
+    -webkit-transform: translate(-50%, -180%);
+    transform: translate(-50%, -180%);
   }
 }
