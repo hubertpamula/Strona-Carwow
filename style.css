@@ -19,10 +19,11 @@ body {
 :root {
   --main-color: #b38b31;
   --secondary-color: #886318;
-  --third-color: #a1a1a1;
+  --third-color: #888888;
 }
 
 /* ================================ NAVBAR ========================== */
+
 .navbar {
   display: -webkit-flex;
   display: flex;
@@ -64,7 +65,9 @@ body {
 .navbar nav a {
   text-decoration: none;
   color: #111;
-  font-weight: 500;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-style: normal;
 }
 
 .menu-toggle {
@@ -146,9 +149,10 @@ h1 {
 }
 
 .services-description h2 {
-  font-size: 4rem;
+  font-size: 5rem;
   font-weight: 700;
   letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   color: var(--main-color);
 }
 
@@ -210,7 +214,7 @@ h1 {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   margin: 0;
-  transition: all 0.8s ease;
+  transition: all 0.5s ease;
   font-size: 1.7rem;
   text-align: center;
   color: var(--main-color);
@@ -222,8 +226,8 @@ h1 {
   transform: translate(-50%, -80%);
 }
 .service-item.active h3 {
-  -webkit-transform: translate(-50%, -180%);
-  transform: translate(-50%, -180%);
+  -webkit-transform: translate(-50%, -100px);
+  transform: translate(-50%, -100px);
 }
 
 /* ---------------------------------- SERVICE OVERLAY ------------------------ */
@@ -282,8 +286,8 @@ h1 {
     url("https://wynndetailing.com.au/wp-content/uploads/2024/07/Car-Detailing-A-Comprehensive-Guide-to-Pristine-Perfection.jpg");
   background-size: cover;
   background-position: center;
-  -webkit-filter: blur(5px);
-  filter: blur(5px);
+  -webkit-filter: blur(2px);
+  filter: blur(2px);
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
   z-index: -1;
@@ -314,7 +318,7 @@ h1 {
   max-width: 40%;
   height: fit-content;
   padding: 2rem;
-  background-color: hsla(0, 0%, 0%, 0.6);
+  background-color: hsla(0, 0%, 0%, 0.5);
   -webkit-box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
   -moz-box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
   box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
@@ -328,6 +332,7 @@ h1 {
   font-size: 3.5rem;
   margin-bottom: 2rem;
   color: var(--main-color);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .about-description p {
@@ -455,13 +460,13 @@ button:hover {
     top: 100%;
     left: 0;
     width: 100%;
-    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 1);
     padding: 1rem 2rem;
     -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     -moz-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+    /* -webkit-backdrop-filter: blur(2%);
+    backdrop-filter: blur(2%); */
   }
 
   .navbar nav.active {
@@ -590,7 +595,7 @@ button:hover {
     transform: translate(-50%, -50%);
   }
   .service-item.active h3 {
-    -webkit-transform: translate(-50%, -180%);
-    transform: translate(-50%, -180%);
+    -webkit-transform: translate(-50%, -150px);
+    transform: translate(-50%, -150px);
   }
 }

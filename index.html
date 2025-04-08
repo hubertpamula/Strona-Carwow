@@ -62,7 +62,9 @@
         <span></span>
         <span></span>
       </div>
-      <div class="logo"><img src="pictures\logo.png" alt="Logo" /></div>
+      <div class="logo">
+        <a href="#"><img src="pictures\logo.png" alt="Logo" /></a>
+      </div>
       <nav id="nav-links">
         <a href="#services">Usługi</a>
         <a href="#about">O nas</a>
@@ -296,15 +298,39 @@
     </section> -->
 
     <!-------------------------------------------------- FOOTER -------------------->
+
     <footer>&copy; 2025 CARWOW. Wszelkie prawa zastrzeżone.</footer>
-    <!--------------------------------------- SCRIPTS--------------------------------- -->
+
+    <!--------------------------------------- SCRIPT menu-toggle --------------------------------- -->
     <script>
-      function toggleMenu() {
+      function toggleMenu(event) {
         const nav = document.getElementById("nav-links");
-        nav.classList.toggle("active");
+        const isActive = nav.classList.contains("active");
+
+        if (isActive) {
+          nav.classList.remove("active");
+          document.removeEventListener("click", closeMenuOnClickOutside);
+        } else {
+          nav.classList.add("active");
+          setTimeout(() => {
+            document.addEventListener("click", closeMenuOnClickOutside);
+          }, 0);
+        }
+
+        event.stopPropagation();
+      }
+
+      function closeMenuOnClickOutside(event) {
+        const nav = document.getElementById("nav-links");
+        const menuToggle = document.querySelector(".menu-toggle");
+
+        if (!nav.contains(event.target) && !menuToggle.contains(event.target)) {
+          nav.classList.remove("active");
+          document.removeEventListener("click", closeMenuOnClickOutside);
+        }
       }
     </script>
-
+    <!-------------------------------------- SCRIPT services------------------------------- -->
     <script>
       // Pobieramy wszystkie elementy service-item
       const serviceItems = document.querySelectorAll(".service-item");
