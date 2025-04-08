@@ -82,7 +82,7 @@
 
     <!---------------------------------------------- SERVICES SECTION --------------------------------->
     <section id="services">
-      <div class="services-description">
+      <div class="description">
         <h2>Usługi</h2>
         <p>
           Oferujemy szeroki zakres usług detailingowych – od mycia premium,
@@ -269,78 +269,86 @@
         </div>
       </div>
     </section>
-    <!-------------------------------------------- CONTACT SECTION  -------------------------------->
+    <!-------------------------------------------- FORM SECTION  -------------------------------->
 
     <section id="contact">
       <div class="section-content">
-        <div class="services-description">
-          <h2>Zapytaj o usługę</h2>
+        <div class="description form-description">
+          <h2>Napisz do Nas</h2>
           <p>
             Umów się na wizytę – Twój samochód zasługuje na najlepsze
-            traktowanie. Skontaktuj się z nami już dziś!
+            traktowanie.<br />Skontaktuj się z nami już dziś!
           </p>
         </div>
         <form>
-          <label>
-            <input type="checkbox" name="services" value="mycie_sprzatanie" />
-            MYCIE I/LUB SPRZĄTANIE
-          </label>
-          <label>
-            <input type="checkbox" name="services" value="folia_ceramika" />
-            FOLIA PPF LUB CERAMIKA
-          </label>
-          <label>
+          <div>
+            <label>
+              <input type="checkbox" name="services" value="mycie_sprzatanie" />
+              MYCIE I/LUB SPRZĄTANIE
+            </label>
+            <label>
+              <input type="checkbox" name="services" value="folia_ceramika" />
+              FOLIA PPF LUB CERAMIKA
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="services"
+                value="przygotowanie_sprzedaz"
+              />
+              PRZYGOTOWANIE SAMOCHODU DO SPRZEDAŻY
+            </label>
+            <label>
+              <input type="checkbox" name="services" value="korekta_lakieru" />
+              KOREKTA LAKIERU
+            </label>
+            <label>
+              <input
+                type="checkbox"
+                name="services"
+                value="detailing_wnetrza"
+              />
+              DETAILING WNĘTRZA
+            </label>
+            <label>
+              <input type="checkbox" name="services" value="inna_usluga" />
+              INNA USŁUGA (PROSIMY O OPISANIE W WIADOMOŚCI PONIŻEJ)
+            </label>
+          </div>
+          <div>
+            <input type="text" name="name" placeholder="Twoje imię" required />
             <input
-              type="checkbox"
-              name="services"
-              value="przygotowanie_sprzedaz"
+              type="text"
+              name="phone"
+              placeholder="Twój numer telefonu"
+              required
             />
-            PRZYGOTOWANIE SAMOCHODU DO SPRZEDAŻY
-          </label>
-          <label>
-            <input type="checkbox" name="services" value="korekta_lakieru" />
-            KOREKTA LAKIERU
-          </label>
-          <label>
-            <input type="checkbox" name="services" value="detailing_wnetrza" />
-            DETAILING WNĘTRZA
-          </label>
-          <label>
-            <input type="checkbox" name="services" value="inna_usluga" />
-            INNA USŁUGA (PROSIMY O OPISANIE W WIADOMOŚCI PONIŻEJ)
-          </label>
-          <input type="text" name="name" placeholder="Twoje imię" required />
-          <input
-            type="text"
-            name="phone"
-            placeholder="Twój numer telefonu"
-            required
-          />
-          <input
-            type="text"
-            name="car"
-            placeholder="Marka Samochodu"
-            required
-          />
-          <input
-            type="text"
-            name="car-model"
-            placeholder="Model Samochodu"
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Adres e-mail"
-            required
-          />
-          <textarea
-            name="message"
-            rows="5"
-            placeholder="Wiadomość (Opcjonalnie)"
-            required
-          ></textarea>
-          <button type="submit">Wyślij</button>
+            <input
+              type="text"
+              name="car"
+              placeholder="Marka Samochodu"
+              required
+            />
+            <input
+              type="text"
+              name="car-model"
+              placeholder="Model Samochodu"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Adres e-mail"
+              required
+            />
+            <textarea
+              name="message"
+              rows="5"
+              placeholder="Wiadomość (Opcjonalnie)"
+              required
+            ></textarea>
+            <button type="submit">Wyślij</button>
+          </div>
         </form>
       </div>
     </section>
