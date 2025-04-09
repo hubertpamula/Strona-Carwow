@@ -3,12 +3,13 @@
 :root {
   --main-color: #cda04a;
   --secondary-color: #dfc26a;
-  --third-color: #888888;
+  --third-color: #bebebe;
 }
 
 html {
   scroll-behavior: smooth;
 }
+
 * {
   margin: 0;
   padding: 0;
@@ -21,6 +22,12 @@ body {
   color: #111;
   line-height: 1.6;
   overflow-x: hidden;
+  background-image: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.5) 0%,
+    rgba(0, 0, 0, 0) 51%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
 }
 
 /* ====================================== BUTTONS =================================*/
@@ -37,8 +44,6 @@ button {
   background: var(--main-color);
   color: black;
   cursor: pointer;
-  -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
-  -moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
 }
@@ -47,6 +52,7 @@ button:hover {
   background: var(--secondary-color);
   transform: scale(1.02);
 }
+
 button:before {
   content: "";
   position: absolute;
@@ -60,43 +66,32 @@ button:before {
   );
   top: 0;
   left: -100px;
+  animation: shine 2s infinite linear;
 }
-button:before {
-  content: "";
-  position: absolute;
-  width: 100px;
-  height: 100%;
-  background-image: linear-gradient(
-    120deg,
-    rgba(255, 255, 255, 0) 30%,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0) 70%
-  );
-  top: 0;
-  left: -100px;
-  animation: shine 2s infinite linear; /* Animation */
-}
+
 .description button {
-  padding: 1rem 20%;
+  padding: 1rem 2rem;
+  width: 100%;
   font-weight: 700;
   font-size: 1.5rem;
 }
+
 .button-map {
   height: fit-content;
   padding: 1rem;
-  -webkit-box-shadow: 0px 0px 20px 2px rgb(0, 0, 0);
-  -moz-box-shadow: 0px 0px 20px 2px rgb(0, 0, 0);
   box-shadow: 0px 0px 20px 2px rgb(0, 0, 0);
   background-color: var(--main-color);
   position: absolute;
   top: -1.5rem;
   right: -1rem;
 }
+
 .form button {
   height: 6rem;
   margin-top: 1rem;
   font-size: 1.5rem;
 }
+
 @keyframes shine {
   0% {
     left: -100px;
@@ -108,42 +103,53 @@ button:before {
     left: 100%;
   }
 }
+
+/* ================================ SHADOW CONTAINER ============================= */
+
+.shadow {
+  background-image: linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.5) 51%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  box-shadow: 0px 0px 15px -5px rgb(0, 0, 0);
+  border: solid 1px black;
+}
+span {
+  color: var(--third-color);
+}
+
 /* ================================ NAVBAR ========================== */
 
 .navbar {
-  display: -webkit-flex;
   display: flex;
-  -webkit-justify-content: space-between;
   justify-content: space-between;
-  -webkit-align-items: center;
   align-items: center;
   padding: 1rem 2rem;
   background-color: rgba(255, 255, 255, 0.8);
-  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   position: fixed;
   width: 100%;
   height: 8rem;
   top: 0;
   z-index: 1000;
-  -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .logo {
   position: absolute;
   left: 50%;
-  -webkit-transform: translateX(-50%);
   transform: translateX(-50%);
 }
+
 .navbar .logo img {
   height: 100px;
   width: auto;
   display: block;
 }
+
 .navbar nav {
-  display: -webkit-flex;
   display: flex;
   gap: 2rem;
 }
@@ -158,7 +164,6 @@ button:before {
 
 .menu-toggle {
   display: none;
-  -webkit-flex-direction: column;
   flex-direction: column;
   cursor: pointer;
   gap: 5px;
@@ -172,10 +177,9 @@ button:before {
 }
 
 /* ================================ HEADER =========================== */
+
 .main-header {
-  display: -webkit-flex;
   display: flex;
-  -webkit-align-items: center;
   align-items: center;
   text-align: center;
   height: 70vh;
@@ -186,19 +190,13 @@ button:before {
   background-size: cover;
   background-position: center;
   color: #fff;
-  -webkit-box-shadow: 0px 0px 10px 2px rgb(0, 0, 0);
-  -moz-box-shadow: 0px 0px 10px 2px rgb(0, 0, 0);
-  box-shadow: 0px 0px 10px 2px rgb(0, 0, 0);
+  /* box-shadow: 0px 0px 10px 2px rgb(0, 0, 0); */
 }
 
 .header-text {
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
   flex-direction: column;
-  -webkit-justify-content: center;
   justify-content: center;
-  -webkit-align-items: center;
   align-items: center;
   height: 100%;
   width: 100%;
@@ -219,19 +217,20 @@ h1 {
 }
 
 /* ================================ SERVICES SECTION ========================== */
-
-.description {
-  display: -webkit-flex;
+.description-container {
   display: flex;
-  -webkit-flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-block: 2rem;
+}
+.description {
+  display: flex;
   flex-direction: column;
-  -webkit-justify-content: space-evenly;
   justify-content: space-evenly;
-  -webkit-align-items: center;
   align-items: center;
   flex-wrap: wrap;
   padding: 2rem;
-  gap: 2rem;
+  width: 50%;
 }
 
 .description h2 {
@@ -243,25 +242,25 @@ h1 {
 }
 
 .description p {
-  max-width: 50%;
-  font-size: 1.2rem;
+  max-width: 100%;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.2;
   padding: 1rem;
   text-align: center;
-  color: #444;
+  color: white;
   letter-spacing: 1px;
-  /* border: 1px solid; */
 }
-
+.description span {
+  margin-top: 2rem;
+}
 .services-collection {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin-bottom: 3rem;
-  margin-inline: 1.5rem;
+  padding: 0 1rem 10rem;
 }
 
 .service-item {
@@ -270,7 +269,7 @@ h1 {
   width: 600px;
   overflow: hidden;
   box-shadow: 0px 0px 15px -5px rgb(0, 0, 0);
-  border: solid 1px;
+  border: 1px solid;
   transition: all 0.5s ease;
   cursor: pointer;
 }
@@ -281,23 +280,20 @@ h1 {
   object-fit: cover;
   display: block;
   transition: all 1s ease;
-  -webkit-filter: brightness(0.3);
   filter: brightness(0.3);
 }
 
 .service-item.active img {
-  -webkit-filter: brightness(0.4) blur(5px);
   filter: brightness(0.4) blur(5px);
-  -webkit-transform: scale(1.2);
   transform: scale(1.2);
 }
+
 .service-item h3 {
   width: 100%;
   text-transform: uppercase;
   position: absolute;
   left: 50%;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   margin: 0;
   transition: all 0.5s ease;
@@ -308,11 +304,10 @@ h1 {
 }
 
 .service-item:hover h3 {
-  -webkit-transform: translate(-50%, -80%);
   transform: translate(-50%, -80%);
 }
+
 .service-item.active h3 {
-  -webkit-transform: translate(-50%, -100px);
   transform: translate(-50%, -100px);
 }
 
@@ -321,23 +316,22 @@ h1 {
 .overlay-content {
   width: 100%;
   color: #ffffff;
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: column;
   flex-direction: column;
-  -webkit-align-items: center;
   align-items: center;
   overflow: hidden;
   position: absolute;
   z-index: 1;
   transition: all 0.5s ease;
   top: 100%;
-  left: 0%;
+  left: 0;
   padding-bottom: 2rem;
 }
-ul {
+
+.overlay-content ul {
   width: 80%;
 }
+
 .overlay-content li {
   color: var(--third-color);
   width: 100%;
@@ -347,116 +341,100 @@ ul {
   line-height: 1rem;
   padding-bottom: 0.5rem;
 }
+
 .service-item.active .overlay-content {
-  -webkit-transform: translateY(-100%);
   transform: translateY(-100%);
 }
 
-/* ================================ ABOUT SECTION =========================== */
-.about-section {
-  position: relative;
-  overflow: hidden;
-  padding: 3rem 3rem;
-  width: 100%;
-  color: #fff;
-}
+/* ================================ SEKKCJA "O NAS" =========================== */
 
-.about-overlay {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 1)),
-    url("https://wynndetailing.com.au/wp-content/uploads/2024/07/Car-Detailing-A-Comprehensive-Guide-to-Pristine-Perfection.jpg");
-  background-size: cover;
+#about {
+  padding: 6rem 2rem;
+  text-align: center;
+  background-color: #fff;
   background-position: center;
-  -webkit-filter: blur(2px);
-  filter: blur(2px);
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-  z-index: -1;
-  height: 100%;
+  background-size: cover;
+  background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(0, 0, 0, 0.6) 51%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url(https://wynndetailing.com.au/wp-content/uploads/2024/07/Car-Detailing-A-Comprehensive-Guide-to-Pristine-Perfection.jpg);
 }
 
-.about-content {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  gap: 2rem;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: space-evenly;
-  justify-content: space-evenly;
+#about .about-description {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
-.about-description {
-  flex: 1;
-  max-width: 40%;
-  height: fit-content;
-  padding: 2rem;
-}
-
-.about-contact {
-  flex: 1;
-  max-width: 40%;
-  height: fit-content;
-  padding: 2rem;
-  background-color: hsla(0, 0%, 0%, 0.5);
-  -webkit-box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
-  -moz-box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
-  box-shadow: 0px 0px 20px -10px rgb(0, 0, 0);
-  border: solid 1px black;
-  -webkit-backdrop-filter: blur(10px);
-  backdrop-filter: blur(10px);
-}
-
-.about-contact h2,
-.about-description h2 {
+#about .about-description h2 {
   font-size: 3.5rem;
   margin-bottom: 2rem;
   color: var(--main-color);
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.about-description p {
-  margin-block: 1rem;
+#about .about-description p {
+  margin-bottom: 1.5rem;
   font-size: 1rem;
-  font-weight: 300;
-  font-style: italic;
-  letter-spacing: 2px;
-  line-height: 1.5;
   color: var(--third-color);
+  line-height: 1.1;
+  font-size: 1.3rem;
+  text-align: start;
+}
+
+/* =========================== KONTAKT I FORMULARZ ============================== */
+
+#contact-info {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-info-container {
+  padding: 5rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6rem;
+  max-width: 100%;
+  width: 100%;
+}
+
+.contact-left,
+.contact-right {
+  flex: 1;
+  backdrop-filter: blur(2%);
+  padding: 2rem;
+  color: white;
+  max-width: 600px;
+  min-width: 500px;
+  height: fit-content;
+}
+
+.contact-left h2,
+.contact-right .form-description h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: var(--main-color);
 }
 
 .contact-details p {
   font-size: 1rem;
   line-height: 1.5;
-  color: var(--third-color);
+  color: white;
   letter-spacing: 2px;
-}
-
-.contact-details p:first-child {
   margin-bottom: 1.5rem;
 }
 
-.contact-details p:last-child {
-  margin-top: 1.5rem;
-}
-
-strong {
-  color: white;
-  letter-spacing: 2px;
-}
-
-span {
-  color: var(--third-color);
-}
-
-a {
+.contact-details a {
   color: var(--main-color);
-  letter-spacing: 1px;
-  font-style: italic;
   text-decoration: none;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+.contact-details span {
+  color: var(--third-color);
 }
 
 .map-container {
@@ -464,51 +442,65 @@ a {
   margin-top: 2rem;
 }
 
-/* ==================================== FORM ================================= */
+/* ====================================== FORM ================================= */
 
-form {
-  margin: 0 auto;
-  display: -webkit-flex;
-  display: flex;
-  justify-content: start;
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 1rem;
-}
-form div {
-  margin: 0 auto;
+#contact-info form {
   display: flex;
   flex-direction: column;
-  height: fit-content;
-  min-width: 50%;
+  gap: 1rem;
+}
+
+.checkbox-group {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: var(--third-color);
+}
+.form-description p {
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+#contact-info .form {
+  display: flex;
+  flex-direction: column;
   gap: 0.5rem;
 }
-form div:first-child {
-  width: fit-content;
-}
-input,
-textarea {
+
+#contact-info input,
+#contact-info textarea {
   padding: 1rem;
   border: 1px solid #ccc;
 }
 
 /* ====================================== FOOTER ======================== */
+
 footer {
   padding: 2rem;
   text-align: center;
   background: #111;
   color: #fff;
   font-size: 0.9rem;
-  margin-top: 10rem;
+  /* margin-top: 10rem; */
 }
 
 /* ================================== MEDIA QUERIES ======================= */
 
 @media (max-width: 896px) {
+  /* ---------------------------------  SHADOW NONE ------------------------ */
+  .shadow {
+    box-shadow: none;
+    border: none;
+  }
+
   /* ----------------------------- NAVBAR---------------------------------- */
   .navbar nav {
     display: none;
-    -webkit-flex-direction: column;
     flex-direction: column;
     position: absolute;
     top: 100%;
@@ -516,146 +508,126 @@ footer {
     width: 100%;
     background-color: rgba(255, 255, 255, 1);
     padding: 1rem 2rem;
-    -webkit-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-    -moz-box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-    /* -webkit-backdrop-filter: blur(2%);
-    backdrop-filter: blur(2%); */
   }
 
   .navbar nav.active {
-    display: -webkit-flex;
     display: flex;
   }
 
   .menu-toggle {
-    display: -webkit-flex;
     display: flex;
   }
+
   .navbar .logo img {
     height: 80px;
   }
+
   /* ---------------------------------- HEADER --------------------------- */
   h1 {
     font-size: 2rem;
   }
+
   .header-text h1 {
     text-align: center;
   }
+
   .header-text h2 {
     font-size: 0.8rem;
     letter-spacing: 5px;
   }
+
   /* --------------------------------- SERVICES ---------------------------- */
   .description {
     gap: 0;
+    width: 100%;
+    margin-inline: 1rem;
   }
+
   .description h2 {
     font-size: 2.5rem;
-    text-align: center;
+    text-align: start;
+    width: 100%;
   }
 
   .description p {
-    font-size: 1rem;
-    text-align: center;
-    line-height: 1.1;
-    max-width: 100%;
+    font-size: 0.9rem;
+    text-align: start;
+    line-height: 1.3;
+    padding-inline: 0;
   }
+
   .description button {
     margin-bottom: 2rem;
   }
+
   .services-collection {
-    margin-inline: 1rem;
+    margin: 0;
+    padding-bottom: 2rem;
   }
+
   .service-item {
     min-width: 100%;
     height: 50vh;
   }
+
   .service-item li {
     font-size: 0.9rem;
   }
 
-  /* ------------------------------------ ABOUT --------------------------------- */
-
-  .about-content {
-    -webkit-flex-direction: column;
-    flex-direction: column;
-    -webkit-align-items: center;
-    align-items: center;
-    text-align: center;
-    gap: 0;
+  /* --------------------------- SEKKCJA "O NAS" ----------------------------- */
+  #about {
+    padding: 2rem;
   }
 
-  .about-description,
-  .about-contact {
-    max-width: 100%;
-    padding: 1.5rem;
-  }
-
-  .about-description h2,
-  .about-contact h2 {
+  #about .about-description h2 {
     font-size: 2.5rem;
-    text-align: center;
+    text-align: start;
   }
 
-  .contact-details p {
+  #about .about-description p {
     font-size: 0.9rem;
-    text-align: start;
+    font-weight: 700;
   }
-  .about-description p {
-    font-size: 1rem;
-    text-align: start;
-  }
-
-  .map-container {
-    margin-top: 3rem;
-  }
-  /* ------------------------------------- FORM ------------------------------------ */
-  form div {
-    margin: 0 2rem;
-    width: 100%;
-  }
-  /* ============================== BACKGROUND-IMAGE ONLY ON ABOUT ===================================== */
-  .about-overlay {
-    display: none;
-  }
-  .about-description {
-    position: relative;
-    z-index: 0;
-    overflow: hidden;
-  }
-  .about-description::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 2)),
-      url("https://wynndetailing.com.au/wp-content/uploads/2024/07/Car-Detailing-A-Comprehensive-Guide-to-Pristine-Perfection.jpg");
-    background-size: cover;
-    background-position: center;
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
-    -webkit-filter: blur(5px);
-    filter: blur(5px);
+  /* -------------------------- KONTAKT I FORMULARZ -------------------------- */
+  #contact-info {
+    flex-direction: column;
   }
 
-  .about-section {
+  .contact-info-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 0;
+    margin-block: 1rem;
+    gap: 1rem;
+    padding-inline: 1rem;
   }
-  .about-contact {
-    width: 100%;
-    background-color: #000;
+  .contact-left,
+  .contact-right {
+    min-width: 100%;
+    border: none;
+    box-shadow: none;
+    gap: 1rem;
+  }
+  .contact-left h2,
+  .contact-right .form-description h2 {
+    font-size: 2.5rem;
+  }
+  .form-description p {
+    font-size: 0.9rem;
+  }
+  .checkbox-group {
+    font-size: 0.8rem;
+    gap: 1rem;
   }
 }
+
 @media (hover: none), (pointer: coarse) {
   .service-item:hover h3 {
     transform: translate(-50%, -50%);
   }
   .service-item.active h3 {
-    -webkit-transform: translate(-50%, -150px);
     transform: translate(-50%, -150px);
   }
 }
